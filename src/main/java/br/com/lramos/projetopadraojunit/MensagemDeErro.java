@@ -1,5 +1,10 @@
 package br.com.lramos.projetopadraojunit;
 
+/**
+ * 
+ * @author ramos
+ *
+ */
 public enum MensagemDeErro {
 	
 	CARACTERES_DUPLICADOS("O nome dado contém espaços duplicados."),

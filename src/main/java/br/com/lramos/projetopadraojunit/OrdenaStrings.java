@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 /**
  * 
- * Classe padrão para Retorna listação de listas de Strings.
+ * Classe que implementa diversas formas de se ordenar uma lista de strings.
  * 
  * @author ramos
  *
@@ -102,8 +102,8 @@ public class OrdenaStrings {
 
 		Boolean temEspacosDuplicados = sobrenomes.stream().filter(s -> s.equals("")).findFirst().isPresent();
 
-		// o Regex s.matches("[a-zA-Z]-") devolve true caso tenha algum caractere que não seja letra
-		Boolean temCaracteresEspeciais = sobrenomes.stream().filter(s -> !s.matches("[a-zA-Z]+")).findFirst()
+		// O Regex s.matches("[a-zA-Z]+") devolve true caso todos os caracteres seja letras
+		Boolean temCaracteresEspeciais = sobrenomes.stream().filter(s -> !s.matches("[a-zA-Z|çÇéÉôÔãÃáÁ]+")).findFirst()
 				.isPresent();
 
 		if (temEspacosDuplicados) {
