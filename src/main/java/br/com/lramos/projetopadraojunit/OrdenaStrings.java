@@ -103,7 +103,7 @@ public class OrdenaStrings {
 		Boolean temEspacosDuplicados = sobrenomes.stream().filter(s -> s.equals("")).findFirst().isPresent();
 
 		// O Regex s.matches("[a-zA-Z]+") devolve true caso todos os caracteres seja letras
-		Boolean temCaracteresEspeciais = sobrenomes.stream().filter(s -> !s.matches("[a-zA-Z|çÇéÉôÔãÃáÁ]+")).findFirst()
+		Boolean temCaracteresEspeciais = sobrenomes.stream().filter(s -> !s.matches("[a-zA-Z|ãÃáÁçÇéÉôÔúÚ]+")).findFirst()
 				.isPresent();
 
 		if (temEspacosDuplicados) {
