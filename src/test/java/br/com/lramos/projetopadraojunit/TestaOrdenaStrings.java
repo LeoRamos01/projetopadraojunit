@@ -42,14 +42,121 @@ public class TestaOrdenaStrings {
 	
 	@Test
 	public void testaAlfabetica() {
-		List<String> strings = Arrays.asList("abobora", "pessego", "maçã", "chinelo");
+		List<String> strings = Arrays.asList(
+				"abobora", 
+				"arroz", 
+				"pizza", 
+				"ovo", 
+				"canela", 
+				"zebra", 
+				"padaria", 
+				"cachorro", 
+				"mouse", 
+				"hipopótamo", 
+				"município", 
+				"cabeça", 
+				"bermuda", 
+				"einstein", 
+				"camera", 
+				"café", 
+				"prédios", 
+				"balé", 
+				"alemanha", 
+				"chinelo", 
+				"maçã", 
+				"pessego");
 
+
+		long inicia = System.nanoTime();
 		strings = ordenaStrings.alfabetica(strings);
+		long fim= System.nanoTime();
 
-		List<String> esperada = Arrays.asList("abobora", "chinelo", "maçã", "pessego");
+		List<String> esperada = Arrays.asList(
+				"abobora", 
+				"alemanha", 
+				"arroz", 
+				"balé", 
+				"bermuda", 
+				"cabeça", 
+				"cachorro", 
+				"café", 
+				"camera", 
+				"canela", 
+				"chinelo", 
+				"einstein", 
+				"hipopótamo", 
+				"maçã", 
+				"mouse", 
+				"município", 
+				"ovo", 
+				"padaria", 
+				"pessego", 
+				"pizza", 
+				"prédios", 
+				"zebra");
+
+		System.out.println("Lambda: " + (fim - inicia) + " nanosegundos");
+		
+		assertEquals(esperada, strings);
+	}
+	
+	@Test
+	public void testaAlfabeticaCollections() {
+		List<String> strings = Arrays.asList(
+				"abobora", 
+				"arroz", 
+				"pizza", 
+				"ovo", 
+				"canela", 
+				"zebra", 
+				"padaria", 
+				"cachorro", 
+				"mouse", 
+				"hipopótamo", 
+				"município", 
+				"cabeça", 
+				"bermuda", 
+				"einstein", 
+				"camera", 
+				"café", 
+				"prédios", 
+				"balé", 
+				"alemanha", 
+				"chinelo", 
+				"maçã", 
+				"pessego");
+
+		long inicia = System.nanoTime();
+		strings = ordenaStrings.alfabeticaCollections(strings);
+		long fim= System.nanoTime();
+
+		List<String> esperada = Arrays.asList(
+				"abobora", 
+				"alemanha", 
+				"arroz", 
+				"balé", 
+				"bermuda", 
+				"cabeça", 
+				"cachorro", 
+				"café", 
+				"camera", 
+				"canela", 
+				"chinelo", 
+				"einstein", 
+				"hipopótamo", 
+				"maçã", 
+				"mouse", 
+				"município", 
+				"ovo", 
+				"padaria", 
+				"pessego", 
+				"pizza", 
+				"prédios", 
+				"zebra");
+		
+		System.out.println("Collections: " + (fim - inicia) + " nanosegundos");
 
 		assertEquals(esperada, strings);
-
 	}
 
 	@Test

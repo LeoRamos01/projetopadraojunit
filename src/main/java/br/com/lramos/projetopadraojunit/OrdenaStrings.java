@@ -2,6 +2,7 @@ package br.com.lramos.projetopadraojunit;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,6 +25,12 @@ public class OrdenaStrings {
 	 */
 	public List<String> alfabetica(List<String> strings) {
 		return strings.stream().filter(s -> s != null).sorted().collect(Collectors.toCollection(ArrayList::new));
+	}
+	
+	public List<String> alfabeticaCollections (List<String> strings) {
+		Collections.sort(strings);
+		return strings;
+		
 	}
 
 	/**
